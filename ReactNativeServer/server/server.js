@@ -39,6 +39,7 @@ const resolvers = {
   Query: {
     about: () => aboutMessage,
     issueList,
+    blackList,
   },
   Mutation: {
     setAboutMessage,
@@ -51,6 +52,7 @@ const resolvers = {
 async function addToBlacklist(_, {nameInput}) {
 
   const result = await db.collection('blacklist').insertOne({name: nameInput});
+  return result.ops[0].name; 
 }
 
 function setAboutMessage(_, { message }) {
@@ -60,6 +62,11 @@ function setAboutMessage(_, { message }) {
 async function issueList() {
   const issues = await db.collection('issues').find({}).toArray();
   return issues;
+}
+
+async function blackList(){
+  const blacklists = await db.collection('blacklist').find({}).toArray();
+  return blacklists;
 }
 
 async function getNextSequence(name) {

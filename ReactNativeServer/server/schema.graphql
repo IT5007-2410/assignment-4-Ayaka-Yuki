@@ -18,6 +18,12 @@ type Issue {
   due: GraphQLDate
 }
 
+type BlacklistOwner{
+  _id: ID!
+  name: String!
+}
+
+
 "Toned down Issue, used as inputs, without server generated values."
 input IssueInputs {
   title: String!
@@ -33,6 +39,7 @@ input IssueInputs {
 type Query {
   about: String!
   issueList: [Issue!]!
+  blackList: [BlacklistOwner!]!
 }
 
 type Mutation {

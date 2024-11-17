@@ -34,10 +34,9 @@ export default class App extends React.Component
   render()
   {
     return(
-    <>
-      <Text>Issue Tracker</Text>
+    <SafeAreaView>
       <IssueList/>
-    </>);
+    </SafeAreaView>);
 
   }
 }
