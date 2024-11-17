@@ -538,7 +538,7 @@ class BlackList extends React.Component {
     render() {
     const { blacklist, currentInput } = this.state;
     return (
-        <View>
+        <View style={styles.formContainer}>
         {/****** Q4: Start Coding here. Create TextInput field, populate state variables. Create a submit button, and on submit, trigger handleSubmit.*******/}
           <View style={styles.formGroup}>
             <Text style={styles.label}>Blacklist</Text>
